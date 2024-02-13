@@ -34,7 +34,7 @@
     <input type="date" id="expires_on_box" name="query_expires_on">
   </div>
 
-  <input type="hidden" id="board_id_box" name="query_board_id" value="17960">
+  <input type="hidden" id="board_id_box" name="query_board_id" value=<%= @the_board.id %>>
 
   <button>
     Add post
@@ -84,12 +84,31 @@
 <h2>Active posts</h2>
 
 <table border="1">
+
+
   <tr>
     <th>Title</th>
     <th>Body</th>
     <th>Posted on</th>
     <th>Expires on</th>
   </tr>
+
+  <% @the_board.posts.each do |post| %>
+    <tr>
+        <td><%= post.title %></td>
+        <td>Texo curto utpote. Altus angulus vae. Acsi audax aqua.
+
+  Laboriosam cotidie abstergo. Ut armo vehemens. Suasoria vivo auris.
+
+  Pecco colo coepi. Spiculum et vespillo. Tempore alias victus.
+
+  Supra agnosco callide. Aedificium sed bonus. Auditor est cubo.
+
+  Et cernuus bellum. Animi cilicium fugit. Calcar carus argumentum.</td>
+        <td>Feb  9, 2024</td>
+        <td>Feb 15, 2024</td>
+      </tr>
+    <% end %>
 
 </table>
 
